@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {HeroService} from './hero.service';
 import {HeroesComponent} from './heroes.component';
+import {HeroDetailComponent} from './hero-detail.component';
 import {DashboardComponent} from './dashboard.component';
 
 @Component({
@@ -14,6 +15,7 @@ import {DashboardComponent} from './dashboard.component';
             </nav>
             <router-outlet></router-outlet>
   `,
+  styleUrls: ['app/app.component.css'],
   directives: [
     ROUTER_DIRECTIVES
   ],
@@ -37,6 +39,14 @@ import {DashboardComponent} from './dashboard.component';
     name: 'Dashboard',
     component: DashboardComponent,
     useAsDefault: true
+  }
+])
+
+@RouteConfig([
+  {
+    path: '/detail/:id',
+    name: 'HeroDetail',
+    component: HeroDetailComponent
   }
 ])
 
